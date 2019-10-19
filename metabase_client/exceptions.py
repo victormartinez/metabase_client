@@ -1,5 +1,3 @@
-
-
 class MetabaseAuthError(Exception):
     pass
 

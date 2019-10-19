@@ -1,20 +1,16 @@
 from json.decoder import JSONDecodeError
 from urllib.parse import urljoin
 
-from metabase_client.resources import (
-    CardResource,
-    SessionResource
-)
+from metabase_client.resources import CardResource, SessionResource
 
 from metabase_client.exceptions import (
     MetabaseAuthError,
     MetabaseConfigError,
-    MetabaseRequestError
+    MetabaseRequestError,
 )
 
 
 class MetabaseClient:
-
     def __init__(self, endpoint, http_client=None, **kwargs):
         self.token = None
         self.username = None
@@ -28,9 +24,10 @@ class MetabaseClient:
             setattr(self, key, value)
 
         if (
-            not self.token and
-            not all([self.username, self.password]) or
-            not endpoint or not kwargs.items()
+            not self.token
+            and not all([self.username, self.password])
+            or not endpoint
+            or not kwargs.items()
         ):
             raise MetabaseConfigError("Invalid arguments provided.")
 

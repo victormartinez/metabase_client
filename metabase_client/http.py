@@ -2,7 +2,6 @@ import requests
 
 
 class HttpClient:
-
     def __init__(self, endpoint):
         self.endpoint = endpoint
 
