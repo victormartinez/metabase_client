@@ -32,13 +32,19 @@ class MetabaseClient:
             raise MetabaseConfigError("Invalid arguments provided.")
 
     def auth(self):
+        if not all([self.username, self.password]):
+            raise MetabaseConfigError("You must provide username and password.")
+
         try:
-            self.token = self.session_resource.get_token(self.username, self.password)
+            idx = self.session_resource.get_token(self.username, self.password)
+            if not idx:
+                raise MetabaseAuthError("The endpoint did not return a valid credential.")
+            self.token = idx
         except Exception as exc:
-            raise MetabaseAuthError(repr(msg))
+            raise MetabaseAuthError(repr(exc))
 
     def get_cards(self):
         try:
             return self.card_resource.list(self.token)
         except Exception as exc:
-            raise MetabaseRequestError(repr(msg))
+            raise MetabaseRequestError(repr(exc))
