@@ -11,12 +11,12 @@ from metabase_client.exceptions import (
 
 
 class MetabaseClient:
-    def __init__(self, endpoint, http_client=None, **kwargs):
+    def __init__(self, endpoint, **kwargs):
         self.token = None
         self.username = None
         self.password = None
-        self.session_resource = SessionResource(HttpClient(endpoint))
-        self.card_resource = CardResource(HttpClient(endpoint))
+        self.session_resource = SessionResource(endpoint)
+        self.card_resource = CardResource(endpoint)
 
         for key, value in kwargs.items():
             if not hasattr(self, key):
