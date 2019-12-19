@@ -1,6 +1,7 @@
 -r requirements.txt
 
 black==19.3b0
+mock==3.0.5
 pyflakes==2.1.1
 pytest==5.2.1
 pytest-flakes==4.0.0
