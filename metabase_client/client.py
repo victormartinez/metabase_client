@@ -1,6 +1,3 @@
-from json.decoder import JSONDecodeError
-from urllib.parse import urljoin
-
 from metabase_client.http import HttpClient
 from metabase_client.resources import CardResource, SessionResource
 from metabase_client.exceptions import (
@@ -38,7 +35,9 @@ class MetabaseClient:
         try:
             idx = self.session_resource.get_token(self.username, self.password)
             if not idx:
-                raise MetabaseAuthError("The endpoint did not return a valid credential.")
+                raise MetabaseAuthError(
+                    "The endpoint did not return a valid credential."
+                )
             self.token = idx
         except Exception as exc:
             raise MetabaseAuthError(repr(exc))

@@ -1,5 +1,4 @@
 class Resource:
-
     def __init__(self, client):
         self.client = client
 
@@ -22,7 +21,5 @@ class CardResource(Resource):
     PATH_LIST_CARDS = "/api/card"
 
     def list(self, auth_token: str):
-        response = self.client.authenticated(
-            "get", self.PATH_LIST_CARDS, auth_token
-        )
+        response = self.client.authenticated("get", self.PATH_LIST_CARDS, auth_token)
         return response.json()

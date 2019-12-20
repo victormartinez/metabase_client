@@ -29,7 +29,9 @@ def test_no_token_returned(mock_request):
     with pytest.raises(MetabaseAuthError) as exc:
         client.auth()
 
-    assert str(exc.value) == "MetabaseAuthError('The endpoint did not return a valid credential.')"
+    assert str(exc.value) == (
+        "MetabaseAuthError('The endpoint did not return a valid credential.')"
+    )
 
 
 @mock.patch("requests.request")
