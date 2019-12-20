@@ -6,7 +6,7 @@ test:
 	pytest
 
 flake:
-	flake8 --ignore=W391,W504,W503 --max-line-length=88 metabase_client/ tests/
+	flake8
 
 black:
 	black --target-version py37 metabase_client --check
