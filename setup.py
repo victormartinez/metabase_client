@@ -35,7 +35,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    keywords="metabase",
+    keywords="metabase client api wrapper",
     packages=find_packages(exclude=["docs", "tests*"]),
     tests_require=tests_require,
     install_requires=install_requires,
