@@ -1,6 +1,6 @@
-from metabase_client.http import HttpClient
-from metabase_client.resources import CardResource, SessionResource
-from metabase_client.exceptions import (
+from metabasepy.http import HttpClient
+from metabasepy.resources import CardResource, SessionResource
+from metabasepy.exceptions import (
     MetabaseAuthError,
     MetabaseConfigError,
     MetabaseRequestError,
@@ -18,12 +18,12 @@ class MetabaseClient:
         :return: :class:`MetabaseClient <MetabaseClient>` object
 
         Usage::
-            >>> from metabase_client import MetabaseClient
+            >>> from metabasepy import MetabaseClient
             >>> client = (MetabaseClient(endpoint='http://www.mymetabase.com',
                                          username='username@email.com',
                                          password='strongPassword'))
 
-            >>> from metabase_client import MetabaseClient
+            >>> from metabasepy import MetabaseClient
             >>> client = (MetabaseClient(endpoint='http://www.mymetabase.com',
                                          token='asdf-zxcv-1234-uipo-hjkl'))
         """
