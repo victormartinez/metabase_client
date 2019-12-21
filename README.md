@@ -33,10 +33,7 @@ Any contributions are welcome. Fork this project and follow the steps below:
 
 1. Create a virtual env.
 2. Implement the feature along with the automated tests.
-3. Apply makefile commands.
-  1. make test
-  1. make flake
-  1. make black
+3. Apply makefile commands (`make [test|flake|black]`)
 4. Open a Pull Request.
 
 ## Help or Suggestions 
