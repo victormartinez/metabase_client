@@ -9,6 +9,24 @@ from metabase_client.exceptions import (
 
 class MetabaseClient:
     def __init__(self, endpoint, **kwargs):
+        """Creates a Metabase Client instance.
+
+        :param endpoint: URL string of Metabase server.
+        :param username: (optional) Username string.
+        :param password: (optional) Password string.
+        :param token: (optional) Auth token already obtained by Metabase server
+        :return: :class:`MetabaseClient <MetabaseClient>` object
+
+        Usage::
+            >>> from metabase_client import MetabaseClient
+            >>> client = (MetabaseClient(endpoint='http://www.mymetabase.com',
+                                         username='username@email.com',
+                                         password='strongPassword'))
+
+            >>> from metabase_client import MetabaseClient
+            >>> client = (MetabaseClient(endpoint='http://www.mymetabase.com',
+                                         token='asdf-zxcv-1234-uipo-hjkl'))
+        """
         self.token = None
         self.username = None
         self.password = None
