@@ -28,14 +28,16 @@ client = MetabaseClient("http://my-metabase-service.com", token="mytoken1q2w3e4r
 
 *Obs:* Since metabase limits the number of logins made through its API, using the second approach enables you to cache the token and avoid many logins.
 
-## Methods available
-
-```
-client.get_cards()
-```
-
 ## Contributions
-Any contributions are welcome. Fork this project and open a pull request.
+Any contributions are welcome. Fork this project and follow the steps below:
+
+1. Create a virtual env.
+2. Implement the feature along with the automated tests.
+3. Apply makefile commands.
+  1. make test
+  1. make flake
+  1. make black
+4. Open a Pull Request.
 
 ## Help or Suggestions 
 Please, open an issue at the [Github Issues page](https://github.com/victormartinez/metabase_client/issues).
