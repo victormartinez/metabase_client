@@ -19,7 +19,7 @@ setup(
     ),
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
-    url="https://github.com/victormartinez/metabase_client",
+    url="https://github.com/Onyo/metabase_client",
     author="Victor Martinez",
     author_email="vcrmartinez@gmail.com",
     license="MIT",
