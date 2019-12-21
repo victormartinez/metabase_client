@@ -26,7 +26,7 @@ from metabase_client import MetabaseClient
 client = MetabaseClient("http://my-metabase-service.com", token="mytoken1q2w3e4r")
 ```
 
-*Obs:* Since metabase limits the number of logins made through its API, using the second approach enables you to cache the token and avoid many logins.
+**Obs:** Since metabase limits the number of logins made through its API, using the second approach enables you to cache the token and avoid many logins.
 
 ## Contributions
 Any contributions are welcome. Fork this project and follow the steps below:
