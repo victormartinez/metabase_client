@@ -2,8 +2,8 @@ import pytest
 import mock
 from requests.exceptions import RequestException
 
-from metabasepy.client import MetabaseClient
-from metabasepy.exceptions import MetabaseAuthError, MetabaseConfigError
+from metabase_client.client import MetabaseClient
+from metabase_client.exceptions import MetabaseAuthError, MetabaseConfigError
 
 
 @mock.patch("requests.request")

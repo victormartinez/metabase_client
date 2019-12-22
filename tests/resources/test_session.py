@@ -1,6 +1,6 @@
 import mock
 
-from metabasepy.resources import SessionResource
+from metabase_client.resources import SessionResource
 
 
 def test_get_token():
@@ -10,8 +10,7 @@ def test_get_token():
     resource = SessionResource(mock_client)
     assert resource.get_token("user", "pass") == "1q2w3e4r"
     mock_client.request.assert_called_once_with(
-        "post",
-        "/api/session",
-        headers={"Content-Type": "application/json"},
-        json={"username": "user", "password": "pass"},
+        "post", "/api/session", headers={"Content-Type": "application/json"},
+        json={"username": "user", "password": "pass"}
     )
+

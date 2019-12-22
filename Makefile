@@ -9,6 +9,6 @@ flake:
 	flake8
 
 black:
-	black --target-version py37 metabasepy --check
+	black --target-version py37 metabase_client --check
 	black --target-version py37 tests --check
 

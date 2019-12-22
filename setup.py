@@ -1,6 +1,6 @@
 from pathlib import Path
 from setuptools import find_packages, setup
-from metabasepy import __version__ as VERSION
+from metabase_client import __version__ as VERSION
 from pip._internal.req import parse_requirements
 
 
@@ -11,7 +11,7 @@ def _to_list(requires):
 install_requires = _to_list(parse_requirements("requirements.txt", session=False))
 tests_require = _to_list(parse_requirements("requirements-dev.txt", session=False))
 setup(
-    name="metabasepy",
+    name="metabase_client",
     version=VERSION,
     description=(
         "A production-ready metabase client "
@@ -19,7 +19,7 @@ setup(
     ),
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Onyo/metabasepy",
+    url="https://github.com/Onyo/metabase_client",
     author="Victor Martinez",
     author_email="vcrmartinez@gmail.com",
     license="MIT",

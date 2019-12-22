@@ -4,7 +4,7 @@ A production-ready metabase client to spare you from handling HTTP requests dire
 ## Install
 
 ```
-$ pip install metabasepy
+$ pip install metabase_client
 ```
 
 ## Start
@@ -12,7 +12,7 @@ $ pip install metabasepy
 You can provide username and password to authenticate...
 
 ```
-from metabasepy import MetabaseClient
+from metabase_client import MetabaseClient
 
 client = MetabaseClient("http://my-metabase-service.com", username="user", password="pass")
 client.auth()
@@ -21,7 +21,7 @@ client.auth()
 ... or just provide an already-authenticated token.
 
 ```
-from metabasepy import MetabaseClient
+from metabase_client import MetabaseClient
 
 client = MetabaseClient("http://my-metabase-service.com", token="mytoken1q2w3e4r")
 ```
@@ -37,4 +37,4 @@ Any contributions are welcome. Fork this project and follow the steps below:
 4. Open a Pull Request.
 
 ## Help or Suggestions 
-Please, open an issue at the [Github Issues page](https://github.com/victormartinez/metabasepy/issues).
+Please, open an issue at the [Github Issues page](https://github.com/victormartinez/metabase_client/issues).
