@@ -10,7 +10,7 @@ from metabase_client.exceptions import (
 
 
 class MetabaseClient:
-    def __init__(self, endpoint, **kwargs):
+    def __init__(self, endpoint: str, **kwargs):
         """Creates a Metabase Client instance.
 
         :param endpoint: URL string of Metabase server.
