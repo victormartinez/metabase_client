@@ -1,3 +1,6 @@
+from typing import Dict
+
+
 class Resource:
     def __init__(self, client):
         self.client = client
@@ -26,7 +29,7 @@ class CardResource(Resource):
         response = self.client.authenticated("get", self.PATH_LIST_CARDS, auth_token)
         return response.json()
 
-    def execute(self, card_number, data=None, export=None):
+    def execute(self, card_number: int, data: Dict = None, export: str = None):
         if export:
             path = self.URL_POST_CARD_ID_EXPORT.format(card_number, export)
         else:
