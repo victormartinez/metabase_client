@@ -1,3 +1,5 @@
+from typing import Dict
+
 from metabase_client.http import HttpClient
 from metabase_client.resources import CardResource, SessionResource
 from metabase_client.exceptions import (
@@ -63,5 +65,19 @@ class MetabaseClient:
     def get_cards(self):
         try:
             return self.card_resource.list(self.token)
+        except Exception as exc:
+            raise MetabaseRequestError(repr(exc))
+
+    def execute_card(self, card_number: int, data: Dict = None, export: str = ""):
+        """Execute a card (query).
+        :param card_number: The card number available in the server
+        :param data: (optional) A dictionary containing the json data necessary
+            to run the query.
+        :param export: (optional) Get the results in the format of
+            ('json', 'csv', 'xlsx')
+        :return: The data dict returned by Metabase endpoint
+        """
+        try:
+            return self.card_resource.execute(card_number, data, export)
         except Exception as exc:
             raise MetabaseRequestError(repr(exc))
